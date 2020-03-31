@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { View, Image, TouchableOpacity, Text, Linking } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
 import * as MailComposer from "expo-mail-composer";
 
+import { Image, Linking, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+
 import { Feather } from "@expo/vector-icons";
+import React from "react";
 import logoIMG from "../../assets/logo.png";
 import styles from "./styles";
 

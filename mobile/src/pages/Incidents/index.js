@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Feather } from "@expo/vector-icons";
 import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
+  ActivityIndicator,
   FlatList,
-  ActivityIndicator
+  Image,
+  Text,
+  TouchableOpacity,
+  View
 } from "react-native";
+import React, { useEffect, useState } from "react";
 
-import { useNavigation } from "@react-navigation/native";
+import { Feather } from "@expo/vector-icons";
 import api from "../../services/api";
-
 import logoImg from "../../assets/logo.png";
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
