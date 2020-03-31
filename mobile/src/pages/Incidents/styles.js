@@ -73,8 +73,9 @@ export default StyleSheet.create({
   },
 
   loading: {
-    alignSelf: 'center',
-    marginTop: 16
+    color: '#e02041',
+    padding: 16,
+    marginBottom: 16
   }
 
 })

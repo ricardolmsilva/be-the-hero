@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Image, TouchableOpacity, Text, Linking } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native'
 import * as MailComposer from 'expo-mail-composer'
-import api from '../../services/api'
 
 import { Feather } from '@expo/vector-icons'
 import logoIMG from '../../assets/logo.png'
@@ -20,6 +19,7 @@ const Detail = () => {
     navigation.navigate('Incidents')
   }
 
+
   function sendMail() {
     MailComposer.composeAsync({
       subject: incident.title,
@@ -31,8 +31,6 @@ const Detail = () => {
   function sendWhatsApp() {
     Linking.openURL(`whatsapp://send?phone=${incident.phone}&text=${message}`)
   }
-
-
 
   return (
     <View style={styles.container}>
@@ -75,5 +73,7 @@ const Detail = () => {
       </View>
     </View>
   )
+
+
 }
 export default Detail;

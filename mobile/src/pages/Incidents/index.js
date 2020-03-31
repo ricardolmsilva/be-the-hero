@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Feather } from '@expo/vector-icons'
-import { View, Text, Image, TouchableOpacity, FlatList, RefreshControl } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import api from '../../services/api'
 
@@ -16,6 +16,7 @@ export default function Incidents() {
   const navigation = useNavigation()
 
   async function loadIncidents() {
+
     if (loading) {
       return;
     }
@@ -42,6 +43,17 @@ export default function Incidents() {
     navigation.navigate('Detail', { incident })
   }
 
+  renderFooter = () => {
+    //it will show indicator at the bottom of the list when data is loading otherwise it returns null
+    if (!loading) return null;
+    return (
+      <ActivityIndicator
+        style={styles.loading}
+        color="#e02041"
+      />
+    );
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -62,6 +74,7 @@ export default function Incidents() {
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
         onEndReachedThreshold={0.2}
+        ListFooterComponent={renderFooter}
         renderItem={({ item: incident }) => (
 
           <View style={styles.incident} >
@@ -83,7 +96,6 @@ export default function Incidents() {
             </TouchableOpacity>
           </View>
         )} />
-
     </View>
   )
 }
