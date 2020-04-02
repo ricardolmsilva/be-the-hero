@@ -19,7 +19,6 @@ export default function Incidents() {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-
   const navigation = useNavigation();
 
   async function loadIncidents() {
@@ -27,12 +26,11 @@ export default function Incidents() {
       return;
     }
 
-    if (total > 0 && incidents.lenght === total) {
+    if (total > 0 && incidents.length == total) {
       return;
     }
 
     setLoading(true);
-
     const response = await api.get("incidents", { params: { page } });
 
     setIncidents([...incidents, ...response.data]);
@@ -49,11 +47,11 @@ export default function Incidents() {
     navigation.navigate("Detail", { incident });
   }
 
-  renderFooter = () => {
+  function renderFooter() {
     //it will show indicator at the bottom of the list when data is loading otherwise it returns null
     if (!loading) return null;
     return <ActivityIndicator style={styles.loading} color="#e02041" />;
-  };
+  }
 
   return (
     <View style={styles.container}>
