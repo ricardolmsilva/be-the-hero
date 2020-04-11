@@ -4,7 +4,7 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
@@ -70,7 +70,7 @@ export default function Incidents() {
       <FlatList
         style={styles.incidentList}
         data={incidents}
-        keyExtractor={incident => String(incident.id)}
+        keyExtractor={(incident) => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
         onEndReachedThreshold={0.2}
@@ -81,9 +81,7 @@ export default function Incidents() {
             <Text style={styles.incidentValue}>{incident.name}</Text>
 
             <Text style={styles.incidentProperty}>City:</Text>
-            <Text style={styles.incidentValue}>
-              {incident.city} / {incident.district}
-            </Text>
+            <Text style={styles.incidentValue}>{incident.city}</Text>
 
             <Text style={styles.incidentProperty}>Incident:</Text>
             <Text style={styles.incidentValue}>{incident.title}</Text>
@@ -92,7 +90,7 @@ export default function Incidents() {
             <Text style={styles.incidentValue}>
               {Intl.NumberFormat("en", {
                 style: "currency",
-                currency: "GBP"
+                currency: "GBP",
               }).format(incident.value)}
             </Text>
 

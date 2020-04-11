@@ -19,7 +19,7 @@ const Detail = () => {
     incident.title
   }" with the value of ${Intl.NumberFormat("en", {
     style: "currency",
-    currency: "GBP"
+    currency: "GBP",
   }).format(incident.value)}.`;
 
   function navigateBack() {
@@ -30,7 +30,7 @@ const Detail = () => {
     MailComposer.composeAsync({
       subject: incident.title,
       recipients: [`${incident.email}`],
-      body: message
+      body: message,
     });
   }
 
@@ -52,9 +52,7 @@ const Detail = () => {
         <Text style={styles.incidentValue}>{incident.name} </Text>
 
         <Text style={styles.incidentProperty}>City:</Text>
-        <Text style={styles.incidentValue}>
-          {incident.city} / {incident.district}
-        </Text>
+        <Text style={styles.incidentValue}>{incident.city}</Text>
 
         <Text style={styles.incidentProperty}>Incident:</Text>
         <Text style={styles.incidentValue}>{incident.title}</Text>
@@ -63,7 +61,7 @@ const Detail = () => {
         <Text style={[styles.incidentValue, { marginBottom: 0 }]}>
           {Intl.NumberFormat("en", {
             style: "currency",
-            currency: "GBP"
+            currency: "GBP",
           }).format(incident.value)}
         </Text>
       </View>

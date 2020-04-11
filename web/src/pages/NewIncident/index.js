@@ -1,31 +1,18 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import * as Yup from "yup";
 
-import api from '../../services/api';
+import "./styles.css";
 
-import logo from '../../assets/logo.svg';
-import './styles.css';
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { FiArrowLeft } from "react-icons/fi";
+import api from "../../services/api";
+import logo from "../../assets/logo.svg";
 
 const NewIncident = () => {
-  const [form, setForm] = useState({});
-  const ongId = localStorage.getItem('ongId');
+  const [formError, setFormError] = useState("");
+  const ongId = localStorage.getItem("token");
   const history = useHistory();
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-      await api.post('incidents', form, { headers: { Authorization: ongId } });
-      history.push('/profile');
-    } catch (error) {
-      console.log('something was wrong');
-    }
-  }
-
 
   return (
     <div className="new_incident_container fade">
@@ -34,27 +21,62 @@ const NewIncident = () => {
           <img src={logo} alt="Logo" />
 
           <h1>New incident</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
+          <p>Fill out all the details of the incident on the next form.</p>
           <Link to="/profile" className="back_link">
             <FiArrowLeft className="login_icon" />
-            Back
+            Cancel
           </Link>
         </section>
 
-        <form onSubmit={handleSubmit}>
-          <input name="title" placeholder="Title of incident" onChange={handleChange} />
-          <textarea name="description" placeholder="Description" onChange={handleChange} />
-          <input name="value" placeholder="Value" onChange={handleChange} />
-
-          <div className="button_group">
-            <Link to="/profile" className="button grey">Cancel</Link>
-            <button type="submit" className="button">Create</button>
-          </div>
-
-        </form>
-
+        <Formik
+          initialValues={{ title: "", description: "", value: "" }}
+          validationSchema={Yup.object({
+            title: Yup.string().required("Required"),
+            description: Yup.string().required("Required"),
+            value: Yup.number("Value must be a number").required("Required"),
+          })}
+          onSubmit={async (values, { setSubmitting }) => {
+            try {
+              await api.post("incidents", values, {
+                headers: { Authorization: ongId },
+              });
+              setSubmitting(false);
+              history.push("/profile");
+            } catch (err) {
+              setSubmitting(false);
+              setFormError(err.response.data.error);
+            }
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <div className="form_group">
+                <Field placeholder="Title of incident" name="title" />
+                <ErrorMessage name="title" component="div" className="error" />
+              </div>
+              <div className="form_group">
+                <Field
+                  component="textarea"
+                  placeholder="Description"
+                  name="description"
+                />
+                <ErrorMessage
+                  name="description"
+                  component="div"
+                  className="error"
+                />
+              </div>
+              <div className="form_group">
+                <Field placeholder="Value" name="value" />
+                <ErrorMessage name="value" component="div" className="error" />
+              </div>
+              <div className="form_error">{formError && formError}</div>
+              <button type="submit" disabled={isSubmitting} className="button">
+                Create
+              </button>
+            </Form>
+          )}
+        </Formik>
       </div>
     </div>
   );

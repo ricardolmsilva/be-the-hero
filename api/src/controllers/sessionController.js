@@ -1,15 +1,24 @@
-const connection = require('../database/connection')
+const connection = require("../database/connection");
+const bcrypt = require("bcrypt");
+const generateToken = require("../../utils/generateToken");
 
 module.exports = {
-    async create(req, res) {
-        const { id } = req.body
-        console.log(id, req.body)
-        const ong = await connection('ongs').where('id', id).select('name').first()
+  async create(req, res) {
+    const { email, password } = req.body;
+    const ong = await connection("ongs").where("email", email).first();
 
-        if (!ong) {
-            return res.status(404).json({ error: "No ONG found with this ID" })
-        }
-
-        res.json(ong)
+    if (!ong) {
+      return res.status(401).json({ error: "The credentials are incorrect" });
     }
-}
+
+    const match = await bcrypt.compare(password, ong.password);
+
+    if (!match) {
+      return res.status(401).json({ error: "The credentials are incorrect" });
+    }
+
+    const token = await generateToken(ong.id);
+
+    return res.json({ name: ong.name, token });
+  },
+};

@@ -1,65 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import "./styles.css";
 
-import api from '../../services/api';
-import logo from '../../assets/logo.svg';
-import './styles.css';
+import { FiPower, FiTrash2 } from "react-icons/fi";
+import { Link, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
+import api from "../../services/api";
+import logo from "../../assets/logo.svg";
 
 const Profile = () => {
-  const ongId = localStorage.getItem('ongId');
-  const ongName = localStorage.getItem('ongName');
+  const token = localStorage.getItem("token");
+  const ongName = localStorage.getItem("ongName");
   const [incidents, setIncidents] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    api.get('profile', {
-      headers: {
-        Authorization: ongId,
-      },
-    }).then((response) => {
-      setIncidents(response.data);
-    });
-  }, [ongId]);
+    api
+      .get("profile", {
+        headers: {
+          Authorization: token,
+        },
+      })
+      .then((response) => {
+        setIncidents(response.data);
+      });
+  }, [token]);
 
   async function handleDelete(id) {
     try {
       await api.delete(`incidents/${id}`, {
         headers: {
-          Authorization: ongId,
+          Authorization: token,
         },
       });
       setIncidents(incidents.filter((incident) => incident.id !== id));
     } catch (error) {
-      alert('error');
+      alert("error");
     }
   }
 
   function handleLogout() {
     localStorage.clear();
-    history.push('/');
+    history.push("/");
   }
 
   return (
     <div className="profile_container fade">
       <header>
         <img src={logo} alt="Logo" />
-        <span>
-          Bem vinda,
-          {' '}
-          {ongName}
-        </span>
-
-        <Link className="button" to="/incidents/new">Create new incident</Link>
-        <button type="button" onClick={handleLogout}><FiPower /></button>
+        <span>Welcome, {ongName}</span>
+        <Link className="button" to="/incidents/new">
+          New incident
+        </Link>
+        <button type="button" onClick={handleLogout}>
+          <FiPower />
+        </button>
       </header>
 
-      <h1>Indicents</h1>
+      <div className="incidents_header">
+        <h1>Incidents</h1>
+        <Link className="button" to="/incidents/new">
+          New incident
+        </Link>
+      </div>
 
       <ul>
         {incidents.map((incident) => (
           <li key={incident.id}>
-            <strong>Indicent:</strong>
+            <strong>Incident:</strong>
             <p>{incident.title}</p>
 
             <strong>Description:</strong>
@@ -67,8 +74,10 @@ const Profile = () => {
 
             <strong>Value:</strong>
             <p>
-
-              {Intl.NumberFormat('en-en', { style: 'currency', currency: 'GBP' }).format(incident.value)}
+              {Intl.NumberFormat("en-en", {
+                style: "currency",
+                currency: "GBP",
+              }).format(incident.value)}
             </p>
 
             <button type="button" onClick={() => handleDelete(incident.id)}>
@@ -77,7 +86,6 @@ const Profile = () => {
           </li>
         ))}
       </ul>
-
     </div>
   );
 };

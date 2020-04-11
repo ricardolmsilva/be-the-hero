@@ -1,10 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Profile from './pages/Profile';
-import NewIncident from './pages/NewIncident';
+import PrivateRoute from "./components/PrivateRoute";
+
+import Login from "./pages/Login";
+import NewIncident from "./pages/NewIncident";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
 
 export default function Routes() {
   return (
@@ -12,8 +14,8 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/register" exact component={Register} />
-        <Route path="/profile" exact component={Profile} />
-        <Route path="/incidents/new" exact component={NewIncident} />
+        <PrivateRoute path="/profile" exact component={Profile} />
+        <PrivateRoute path="/incidents/new" exact component={NewIncident} />
         <Route component={Login} />
       </Switch>
     </BrowserRouter>

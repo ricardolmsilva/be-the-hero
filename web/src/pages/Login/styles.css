@@ -1,25 +1,40 @@
-
-.login_container{
+.login_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1120px;
-  height:100vh;
+  height: 100vh;
   margin: 0 auto;
 }
 
-section.form{
-  width:100%;
+section.form {
+  width: 100%;
   max-width: 350px;
-  margin-right: 30px;
 }
 
-section.form form{
-  margin-top: 100px;
+section.form form {
+  margin-top: 80px;
 }
 
-section.form form h1{
-  font-size: 32px;
-  margin-bottom: 32px;
+.heroes_img {
+  padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+  .login_container {
+    height: unset;
+    min-height: 100vh;
+    padding: 30px 0;
+    justify-content: center;
+  }
+
+  .login_container section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroes_img {
+    display: none;
+  }
 }

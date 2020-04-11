@@ -1,15 +1,15 @@
-.register_container{
+.register_container {
   width: 100%;
   max-width: 1120px;
   height: 100vh;
   margin: 0 auto;
 
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.register_container .content{
+.register_container .content {
   width: 100%;
   padding: 96px;
   background: #f0f0f5;
@@ -22,36 +22,53 @@
   align-items: center;
 }
 
-.register_container .content section{
+.register_container .content section {
   width: 100%;
   max-width: 380px;
 }
 
-.register_container .content section h1{
+.register_container .content section h1 {
   margin: 64px 0 32px;
   font-size: 32px;
 }
 
-.register_container .content section p{
+.register_container .content section p {
   font-size: 16px;
   color: #737380;
   line-height: 32px;
 }
 
-.register_container .content form{
-  width: 100%;
-  max-width: 450px;
+.register_container .content section + form {
+  padding-left: 10px;
 }
 
+@media (max-width: 768px) {
+  .register_container {
+    height: unset;
+    min-height: 100vh;
+    padding: 30px 0;
+  }
 
-.register_container .content form input{
-  margin-top: 8px;
-}
+  .register_container .content {
+    display: flex;
+    flex-direction: column;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    padding: 0px;
+  }
 
-.register_container .content form .input_group{
-  display: flex;
-}
+  .register_container .content section {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+  }
 
-.register_container .content form .input_group input + input{
-  margin-left: 8px;
+  .register_container .content section + form {
+    padding-left: 0px;
+  }
+
+  form {
+    margin-top: 30px;
+  }
 }
