@@ -73,7 +73,7 @@ export default StyleSheet.create({
   },
 
   loading: {
-    color: "#e02041",
+    //color: "#e02041",
     padding: 16,
     marginBottom: 16
   }

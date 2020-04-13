@@ -5,14 +5,15 @@ import {
   Text,
   TouchableOpacity,
   View,
+  RefreshControl,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-
+import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
+
 import api from "../../services/api";
 import logoImg from "../../assets/logo.png";
 import styles from "./styles";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
@@ -20,6 +21,33 @@ export default function Incidents() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const navigation = useNavigation();
+
+  async function fetchData(isRefresh) {
+    const response = await api.get("incidents", !isRefresh && { params: { page } });
+
+    isRefresh
+      ? setIncidents(response.data)
+      : setIncidents([...incidents, ...response.data]);
+
+    setTotal(response.headers["x-total-count"]);
+    isRefresh
+      ? setPage(2)
+      : setPage(page + 1);
+    console.log('"page" after request: ', page)
+    setLoading(false);
+  }
+
+  async function refreshIncidents() {
+    if (loading) {
+      return;
+    }
+
+    setLoading(true);
+
+    // setPage(1);
+
+    fetchData((isRefresh = true));
+  }
 
   async function loadIncidents() {
     if (loading) {
@@ -31,12 +59,8 @@ export default function Incidents() {
     }
 
     setLoading(true);
-    const response = await api.get("incidents", { params: { page } });
-
-    setIncidents([...incidents, ...response.data]);
-    setTotal(response.headers["x-total-count"]);
-    setPage(page + 1);
-    setLoading(false);
+    console.log('carregando incidents')
+    fetchData((isRefresh = false));
   }
 
   useEffect(() => {
@@ -45,12 +69,6 @@ export default function Incidents() {
 
   function navigateToDetail(incident) {
     navigation.navigate("Detail", { incident });
-  }
-
-  function renderFooter() {
-    //it will show indicator at the bottom of the list when data is loading otherwise it returns null
-    if (!loading) return null;
-    return <ActivityIndicator style={styles.loading} color="#e02041" />;
   }
 
   return (
@@ -73,18 +91,24 @@ export default function Incidents() {
         keyExtractor={(incident) => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
-        onEndReachedThreshold={0.2}
-        ListFooterComponent={renderFooter}
+        ListFooterComponent={total !== 0 && loading && <ActivityIndicator style={styles.loading} />}
+        onEndReachedThreshold={0.3}
+        refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={refreshIncidents} />
+        }
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
             <Text style={styles.incidentProperty}>ONG:</Text>
             <Text style={styles.incidentValue}>{incident.name}</Text>
 
-            <Text style={styles.incidentProperty}>City:</Text>
-            <Text style={styles.incidentValue}>{incident.city}</Text>
-
             <Text style={styles.incidentProperty}>Incident:</Text>
             <Text style={styles.incidentValue}>{incident.title}</Text>
+
+            <Text style={styles.incidentProperty}>Description:</Text>
+            <Text style={styles.incidentValue}>{incident.description}</Text>
+
+            <Text style={styles.incidentProperty}>City:</Text>
+            <Text style={styles.incidentValue}>{incident.city}</Text>
 
             <Text style={styles.incidentProperty}>Value:</Text>
             <Text style={styles.incidentValue}>

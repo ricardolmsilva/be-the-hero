@@ -49,13 +49,16 @@ const Detail = () => {
       </View>
       <View style={styles.incident}>
         <Text style={styles.incidentProperty}>ONG:</Text>
-        <Text style={styles.incidentValue}>{incident.name} </Text>
-
-        <Text style={styles.incidentProperty}>City:</Text>
-        <Text style={styles.incidentValue}>{incident.city}</Text>
+        <Text style={styles.incidentValue}>{incident.name}</Text>
 
         <Text style={styles.incidentProperty}>Incident:</Text>
         <Text style={styles.incidentValue}>{incident.title}</Text>
+
+        <Text style={styles.incidentProperty}>Description:</Text>
+        <Text style={styles.incidentValue}>{incident.description}</Text>
+
+        <Text style={styles.incidentProperty}>City:</Text>
+        <Text style={styles.incidentValue}>{incident.city}</Text>
 
         <Text style={styles.incidentProperty}>Value:</Text>
         <Text style={[styles.incidentValue, { marginBottom: 0 }]}>

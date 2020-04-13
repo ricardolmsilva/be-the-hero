@@ -14,15 +14,18 @@ const Profile = () => {
   const history = useHistory();
 
   useEffect(() => {
-    api
-      .get("profile", {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then((response) => {
-        setIncidents(response.data);
-      });
+    function fetchData() {
+      api
+        .get("profile", {
+          headers: {
+            Authorization: token,
+          },
+        })
+        .then((response) => {
+          setIncidents(response.data);
+        });
+    }
+    fetchData();
   }, [token]);
 
   async function handleDelete(id) {
