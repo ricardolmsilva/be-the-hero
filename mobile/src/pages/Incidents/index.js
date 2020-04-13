@@ -20,21 +20,32 @@ export default function Incidents() {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
+  const [firstIncidentID, setFirstIncidentID] = useState()
   const navigation = useNavigation();
 
   async function fetchData(isRefresh) {
-    const response = await api.get("incidents", !isRefresh && { params: { page } });
 
-    isRefresh
-      ? setIncidents(response.data)
-      : setIncidents([...incidents, ...response.data]);
+    const response = await api.get("incidents", !isRefresh && {
+      headers: { "id": firstIncidentID },
+      params: { page }
+    });
 
-    setTotal(response.headers["x-total-count"]);
-    isRefresh
-      ? setPage(2)
-      : setPage(page + 1);
-    console.log('"page" after request: ', page)
+    if (isRefresh) {
+      if (incidents[1].id != response.data[1].id) {
+        setIncidents(response.data)
+        setTotal(response.headers["x-total-count"]);
+        setFirstIncidentID(response.data[1].id)
+        setPage(2)
+      }
+    } else {
+      setIncidents([...incidents, ...response.data])
+      page == 1 && setTotal(response.headers["x-total-count"]);
+      page == 1 && setFirstIncidentID(response.data[1].id)
+      setPage(page => page + 1);
+    }
+
     setLoading(false);
+
   }
 
   async function refreshIncidents() {
@@ -43,9 +54,6 @@ export default function Incidents() {
     }
 
     setLoading(true);
-
-    // setPage(1);
-
     fetchData((isRefresh = true));
   }
 
@@ -59,12 +67,13 @@ export default function Incidents() {
     }
 
     setLoading(true);
-    console.log('carregando incidents')
-    fetchData((isRefresh = false));
+    await fetchData((isRefresh = false));
   }
 
   useEffect(() => {
-    loadIncidents();
+
+    loadIncidents()
+
   }, []);
 
   function navigateToDetail(incident) {

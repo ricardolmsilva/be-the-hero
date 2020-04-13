@@ -11,17 +11,17 @@ export default StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    paddingBottom: 16
   },
 
   incident: {
     padding: 24,
     borderRadius: 8,
     backgroundColor: "#fff",
-    marginTop: 32,
+    marginTop: 16,
     marginBottom: 16
   },
-
   incidentProperty: {
     fontSize: 14,
     color: "#41414d",
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     padding: 24,
     borderRadius: 8,
     backgroundColor: "#fff",
-    marginBottom: 16
+    marginBottom: 32
   },
 
   heroTitle: {

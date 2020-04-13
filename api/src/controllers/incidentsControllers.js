@@ -1,27 +1,37 @@
 const connection = require("../database/connection");
 
 module.exports = {
+
   async index(req, res) {
-    const { page = 1 } = req.query;
+    try {
 
-    const [count] = await connection("incidents").count("id");
 
-    const incidents = await connection("incidents")
-      .join("ongs", "ongs.id", "=", "incidents.ong_id")
-      .limit(5)
-      .offset((page - 1) * 5)
-      .select([
-        "incidents.*",
-        "ongs.name",
-        "ongs.email",
-        "ongs.phone",
-        "ongs.city",
-      ])
-      .orderBy("id", "desc");
+      const { page = 1 } = req.query;
+      const id = req.headers.id == undefined ? "" : req.headers.id
 
-    res.header("X-Total-Count", count["count(`id`)"]);
+      console.log(id)
+      const [count] = await connection("incidents").count("id");
 
-    return res.json(incidents);
+      const incidents = await connection("incidents")
+        .join("ongs", "ongs.id", "=", "incidents.ong_id")
+        .where('incidents.id', '<=', id)
+        .limit(5)
+        .offset((page - 1) * 5)
+        .select([
+          "incidents.*",
+          "ongs.name",
+          "ongs.email",
+          "ongs.phone",
+          "ongs.city",
+        ])
+        .orderBy("incidents.id", "desc")
+
+      res.header("X-Total-Count", count["count(`id`)"]);
+
+      return res.json(incidents);
+    } catch (err) {
+      return res.json(err)
+    }
   },
 
   async create(req, res) {
