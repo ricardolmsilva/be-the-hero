@@ -49,6 +49,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 24px;
   list-style: none;
+  padding-bottom:32px;
 }
 
 .profile_container ul li {
