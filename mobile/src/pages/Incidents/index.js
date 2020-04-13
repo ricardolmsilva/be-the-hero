@@ -34,13 +34,13 @@ export default function Incidents() {
       if (incidents[1].id != response.data[1].id) {
         setIncidents(response.data)
         setTotal(response.headers["x-total-count"]);
-        setFirstIncidentID(response.data[1].id)
+        setFirstIncidentID(response.data[0].id)
         setPage(2)
       }
     } else {
       setIncidents([...incidents, ...response.data])
       page == 1 && setTotal(response.headers["x-total-count"]);
-      page == 1 && setFirstIncidentID(response.data[1].id)
+      page == 1 && setFirstIncidentID(response.data[0].id)
       setPage(page => page + 1);
     }
 
@@ -61,7 +61,7 @@ export default function Incidents() {
     if (loading) {
       return;
     }
-
+    console.log(incidents.length, total)
     if (total > 0 && incidents.length == total) {
       return;
     }
