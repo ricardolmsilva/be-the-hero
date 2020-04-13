@@ -9,7 +9,6 @@ module.exports = {
       const { page = 1 } = req.query;
       const id = req.headers.id == undefined ? "" : req.headers.id
 
-      console.log(id)
       const [count] = await connection("incidents").count("id");
 
       const incidents = await connection("incidents")

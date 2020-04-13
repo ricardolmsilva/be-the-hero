@@ -61,7 +61,7 @@ export default function Incidents() {
     if (loading) {
       return;
     }
-    console.log(incidents.length, total)
+
     if (total > 0 && incidents.length == total) {
       return;
     }
