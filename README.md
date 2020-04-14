@@ -6,7 +6,7 @@
 <br>
 
 ### :rocket: Used Technologies 
-<table  style="border:0;">
+<table  style="border:0;width:100%">
  <tr>
     <td  style="width:40%;text-align:left;border:0;">
       - <a href="https://nodejs.org">[Node.js]</a></br>
