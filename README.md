@@ -5,24 +5,24 @@
 <br>
 <br>
 
+### :rocket: Used Technologies 
 <table border="0">
  <tr>
-    <td align="left">
-    ### :rocket: Used Technologies 
-- [Node.js](https://nodejs.org)
-- [React.js](https://reactjs.org)
-- [React Native](https://reactnative.dev)
-- [Expo](https://expo.io/)
-- [Express](https://expressjs.com)
-- [Axios](https://www.npmjs.com/package/axios)
-- [JWT](https://jwt.io)
-- [Formik](https://jaredpalmer.com/formik/docs/overview)
-- [Yup](https://github.com/jquense/yup)
-- [Eslint](https://www.npmjs.com/package/eslint)
-- [Jest](https://www.npmjs.com/package/jest)
+    <td align="left" border="0" width="40%">
+- [Node.js](https://nodejs.org)</br>
+- [React.js](https://reactjs.org)</br>
+- [React Native](https://reactnative.dev)</br>
+- [Expo](https://expo.io/)</br>
+- [Express](https://expressjs.com)</br>
+- [Axios](https://www.npmjs.com/package/axios)</br>
+- [JWT](https://jwt.io)</br>
+- [Formik](https://jaredpalmer.com/formik/docs/overview)</br>
+- [Yup](https://github.com/jquense/yup)</br>
+- [Eslint](https://www.npmjs.com/package/eslint)</br>
+- [Jest](https://www.npmjs.com/package/jest)</br>
     </td>
-    <td align="center">
-  <img src="./mobile/assets/preview.png" width="250px" /><br>
+    <td align="center" border="0">
+  <img src="./mobile/assets/preview.png" height="250px" /><br>
     </td>
  </tr>
 </table>
