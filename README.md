@@ -6,23 +6,21 @@
 <br>
 
 ### :rocket: Used Technologies 
-<table style="border:none;">
+<table  style="border:0;">
  <tr>
-    <td align="left" width="40%">
-- <a href="https://nodejs.org">[Node.js]</a></br>
-- [React.js](https://reactjs.org)</br>
-- [React Native](https://reactnative.dev)</br>
-- [Expo](https://expo.io/)</br>
-- [Express](https://expressjs.com)</br>
-- [Axios](https://www.npmjs.com/package/axios)</br>
-- [JWT](https://jwt.io)</br>
-- [Formik](https://jaredpalmer.com/formik/docs/overview)</br>
-- [Yup](https://github.com/jquense/yup)</br>
-- [Eslint](https://www.npmjs.com/package/eslint)</br>
-- [Jest](https://www.npmjs.com/package/jest)</br>
+    <td  style="width:40%;text-align:left;border:0;">
+      - <a href="https://nodejs.org">[Node.js]</a></br>
+      - <a href="https://reactjs.org">[React.js]</a></br>
+      - <a href="https://reactnative.dev">[React Native]</a></br>
+      - <a href="https://expo.io/">[Expo]</a></br>
+      - <a href="https://expressjs.com">[Express]</a></br>
+      - <a href="https://www.npmjs.com/package/axios">[Axios]</a></br>
+      - <a href="https://jwt.io">[JWT]</a></br>
+      - <a href="https://www.npmjs.com/package/eslint">[ESlint]</a></br>
+      - <a href="https://www.npmjs.com/package/jest">[Jest]</a></br>
     </td>
-    <td align="center" border="0">
-  <img src="./mobile/assets/preview.png" height="500px" /><br>
+    <td style="text-align:center;border:0;">
+      <img src="./mobile/assets/preview.png" height="500px" /><br>
     </td>
  </tr>
 </table>
