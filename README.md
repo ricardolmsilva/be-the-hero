@@ -17,6 +17,11 @@
 ## 
 
 </br>
+
+<div align="center">
+  <img src="./web/src/assets/mockup.png" width="250px" /><br>
+</div>
+
 </br>
 
 ## :rocket: Used Technologies 
