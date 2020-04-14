@@ -6,10 +6,10 @@
 <br>
 
 ### :rocket: Used Technologies 
-<table border="0">
+<table style="border:none;">
  <tr>
-    <td align="left" border="0" width="40%">
-- [Node.js](https://nodejs.org)</br>
+    <td align="left" width="40%">
+- <a href="https://nodejs.org">[Node.js]</a></br>
 - [React.js](https://reactjs.org)</br>
 - [React Native](https://reactnative.dev)</br>
 - [Expo](https://expo.io/)</br>
@@ -22,7 +22,7 @@
 - [Jest](https://www.npmjs.com/package/jest)</br>
     </td>
     <td align="center" border="0">
-  <img src="./mobile/assets/preview.png" height="250px" /><br>
+  <img src="./mobile/assets/preview.png" height="500px" /><br>
     </td>
  </tr>
 </table>
