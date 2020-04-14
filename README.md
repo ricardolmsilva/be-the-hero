@@ -18,16 +18,19 @@
 - [Eslint](https://www.npmjs.com/package/eslint)
 - [Jest](https://www.npmjs.com/package/jest)
 
+<br>
 
 ### :computer: Project
 
 <b>Be the Hero</b> it's a project that aims to help financial charity associations.
 
+<br>
 
 ### :mortar_board: Teacher
 
 OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
 
+<br>
 
 ### :nerd_face: Improvements
 
@@ -39,9 +42,12 @@ After complete the OmniStack week, I was forward and improved the project a litt
  - Fixed bugs in the list of the mobile app when a new incident is created while the user is scrolling
  - Improved list in mobile app creating a new method to get the most recent incidents with gesture down
 
+<br>
 
 ### :books: Conclusion
 
-With the development of this project I improved my knowledge in JavaScript, Node.js e React.js.
-In addition to improving my knowledge in the above mentioned technologies, I also learned how to develop an application using React Native
-That was a awesome week full of knowledge.
+That was a awesome week full of knowledge where i could improved my knowledge in JavaScript, Node.js e React.js.
+That week i could developed my first mobile app using React Native and very happy for that.
+I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
+
+<br>
