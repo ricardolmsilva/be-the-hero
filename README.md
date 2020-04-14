@@ -19,7 +19,7 @@
 </br>
 
 <div align="center">
-  <img src="./web/src/assets/mockup.png" width="250px" /><br>
+  <img src="./web/src/assets/mockup.png" height="250px" /><br>
 </div>
 
 </br>
