@@ -25,7 +25,7 @@
 
 OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
 
-### :nerd: Personal modifications
+### :nerd: :nerd_face: Improvements
 After complete the OmniStack week, I was forward and boosted that project a little bit :muscle:
 
  - Transformed web project responsible
