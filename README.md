@@ -5,7 +5,10 @@
 <br>
 <br>
 
-### :rocket: Used Technologies 
+<table border="0">
+ <tr>
+    <td align="left">
+    ### :rocket: Used Technologies 
 - [Node.js](https://nodejs.org)
 - [React.js](https://reactjs.org)
 - [React Native](https://reactnative.dev)
@@ -17,6 +20,14 @@
 - [Yup](https://github.com/jquense/yup)
 - [Eslint](https://www.npmjs.com/package/eslint)
 - [Jest](https://www.npmjs.com/package/jest)
+    </td>
+    <td align="center">
+  <img src="./mobile/assets/preview.png" width="250px" /><br>
+    </td>
+ </tr>
+</table>
+
+
 
 <br>
 
