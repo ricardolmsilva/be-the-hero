@@ -41,19 +41,19 @@ Extras:
 
 <br>
 
-### :computer: Project
+## :computer: Project
 
 <b>Be the Hero</b> it's a project that aims to help financial charity associations.
 
 <br>
 
-### :mortar_board: Teacher
+## :mortar_board: Teacher
 
 OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
 
 <br>
 
-### :nerd_face: Improvements
+## :nerd_face: Improvements
 
 After complete the OmniStack week, I was forward and improved the project a little bit :muscle:
 
@@ -65,7 +65,7 @@ After complete the OmniStack week, I was forward and improved the project a litt
 
 <br>
 
-### :books: Conclusion
+## :books: Conclusion
 
 That was a awesome week full of knowledge where i could improved my knowledge in JavaScript, Node.js e React.js.
 That week i could developed my first mobile app using React Native and I'm very happy for that.
