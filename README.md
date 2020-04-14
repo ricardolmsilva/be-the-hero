@@ -8,8 +8,8 @@
 <div align="center">
   <a href="#rocket-used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#mortar_board-teacher">Teacher</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#nerd_face-improvements">Improvements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#mortar_board-teacher">Teacher</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-conclusion">Conclusion</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </div>
@@ -52,12 +52,6 @@ Extras:
 
 <br>
 
-## :mortar_board: Teacher
-
-OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
-
-<br>
-
 ## :nerd_face: Improvements
 
 After complete the OmniStack week, I was forward and improved the project a little bit :muscle:
@@ -67,6 +61,12 @@ After complete the OmniStack week, I was forward and improved the project a litt
  - Implemented Formik with Yup library to validate forms
  - Fixed bugs in the list of the mobile app when a new incident is created while the user is scrolling
  - Improved list in mobile app creating a new method to get the most recent incidents with gesture down
+
+<br>
+
+## :mortar_board: Teacher
+
+OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
 
 <br>
 
