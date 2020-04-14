@@ -3,14 +3,14 @@
 </div>
 <br>
 
-<div align="center">
+<p align="center">
   <a href="#used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projet">Projet</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-teacher">Teacher</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-improvements">Improvements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-conclusion">Conclusion</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
-</div>
+</p>
 
 <br>
 
@@ -20,15 +20,22 @@
 - [React Native](https://reactnative.dev)
 - [Expo](https://expo.io/)
 
-- Main Libraries
-  - [Express](https://expressjs.com)
-  - [Knex.js](http://knexjs.org)
-  - [Axios](https://www.npmjs.com/package/axios)
-  - [JWT](https://jwt.io)
-  - [Formik](https://jaredpalmer.com/formik/docs/overview)
-  - [Yup](https://github.com/jquense/yup)
-  - [Eslint](https://www.npmjs.com/package/eslint)
-  - [Jest](https://www.npmjs.com/package/jest)
+Extras:
+</hr>
+  - Main Libs
+    - [Express](https://expressjs.com)
+    - [Knex.js](http://knexjs.org)
+    - [Axios](https://www.npmjs.com/package/axios)
+    - [JWT](https://jwt.io)
+    - [Formik](https://jaredpalmer.com/formik/docs/overview)
+    - [Yup](https://github.com/jquense/yup)
+    - [Jest](https://www.npmjs.com/package/jest)
+
+  - Styles
+    - [EditorConfig](https://editorconfig.org/)
+    - [ESLint](https://eslint.org/)
+    - [Prettier](https://prettier.io/)
+
 
 <br>
 
