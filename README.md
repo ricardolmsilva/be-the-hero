@@ -6,9 +6,9 @@
 <br>
 
 ### :rocket: Used Technologies 
-<table  style="border:0;width:100%">
- <tr style="border:0;width:100%">
-    <td  style="width:40%;text-align:left;border:0;">
+<table  width="100%">
+ <tr width="100%">
+    <td  width="40%">
       - <a href="https://nodejs.org">[Node.js]</a></br>
       - <a href="https://reactjs.org">[React.js]</a></br>
       - <a href="https://reactnative.dev">[React Native]</a></br>
@@ -19,7 +19,7 @@
       - <a href="https://www.npmjs.com/package/eslint">[ESlint]</a></br>
       - <a href="https://www.npmjs.com/package/jest">[Jest]</a></br>
     </td>
-    <td style="text-align:center;border:0;">
+    <td align="center">
       <img src="./mobile/assets/preview.png" height="500px" /><br>
     </td>
  </tr>
