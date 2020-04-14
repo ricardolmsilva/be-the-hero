@@ -1,8 +1,16 @@
 <div align="center">
   <img src="./web/src/assets/logo.svg" width="250px" /><br>
 </div>
-
 <br>
+
+<div align="center">
+  <a href="#used-technologies">Technologies</a>
+  <a href="#-projet">Projet</a>
+  <a href="#-teacher">Teacher</a>
+  <a href="#-improvements">Improvements</a>
+  <a href="#-conclusion">Conclusion</a>
+</div>
+
 <br>
 
 ### :rocket: Used Technologies 
@@ -11,6 +19,7 @@
 - [React Native](https://reactnative.dev)
 - [Expo](https://expo.io/)
 - [Express](https://expressjs.com)
+- [Knex.js](http://knexjs.org)
 - [Axios](https://www.npmjs.com/package/axios)
 - [JWT](https://jwt.io)
 - [Formik](https://jaredpalmer.com/formik/docs/overview)
