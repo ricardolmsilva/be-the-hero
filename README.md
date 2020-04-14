@@ -73,8 +73,8 @@ I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
 
 <br>
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
 
 <br>
