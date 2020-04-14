@@ -5,7 +5,6 @@ module.exports = {
   async index(req, res) {
     try {
 
-
       const { page = 1 } = req.query;
       const id = req.headers.id == undefined ? "" : req.headers.id
 
