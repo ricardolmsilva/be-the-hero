@@ -1,31 +1,23 @@
 <div align="center">
   <img src="./web/src/assets/logo.svg" width="250px" /><br>
+  <img src="./web/src/assets/logo.svg" width="250px" /><br>
 </div>
 
 <br>
 <br>
 
 ### :rocket: Used Technologies 
-<table  width="100%">
- <tr width="100%">
-    <td  width="40%">
-      - <a href="https://nodejs.org">[Node.js]</a></br>
-      - <a href="https://reactjs.org">[React.js]</a></br>
-      - <a href="https://reactnative.dev">[React Native]</a></br>
-      - <a href="https://expo.io/">[Expo]</a></br>
-      - <a href="https://expressjs.com">[Express]</a></br>
-      - <a href="https://www.npmjs.com/package/axios">[Axios]</a></br>
-      - <a href="https://jwt.io">[JWT]</a></br>
-      - <a href="https://www.npmjs.com/package/eslint">[ESlint]</a></br>
-      - <a href="https://www.npmjs.com/package/jest">[Jest]</a></br>
-    </td>
-    <td align="center">
-      <img src="./mobile/assets/preview.png" height="500px" /><br>
-    </td>
- </tr>
-</table>
-
-
+- [Node.js](https://nodejs.org)
+- [React.js](https://reactjs.org)
+- [React Native](https://reactnative.dev)
+- [Expo](https://expo.io/)
+- [Express](https://expressjs.com)
+- [Axios](https://www.npmjs.com/package/axios)
+- [JWT](https://jwt.io)
+- [Formik](https://jaredpalmer.com/formik/docs/overview)
+- [Yup](https://github.com/jquense/yup)
+- [Eslint](https://www.npmjs.com/package/eslint)
+- [Jest](https://www.npmjs.com/package/jest)
 
 <br>
 
@@ -56,7 +48,7 @@ After complete the OmniStack week, I was forward and improved the project a litt
 ### :books: Conclusion
 
 That was a awesome week full of knowledge where i could improved my knowledge in JavaScript, Node.js e React.js.
-That week i could developed my first mobile app using React Native and very happy for that.
+That week i could developed my first mobile app using React Native and I'm very happy for that.
 I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
 
 <br>
