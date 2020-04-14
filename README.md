@@ -4,11 +4,12 @@
 <br>
 
 <div align="center">
-  <a href="#used-technologies">Technologies</a>
-  <a href="#-projet">Projet</a>
-  <a href="#-teacher">Teacher</a>
-  <a href="#-improvements">Improvements</a>
-  <a href="#-conclusion">Conclusion</a>
+  <a href="#used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projet">Projet</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-teacher">Teacher</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-improvements">Improvements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-conclusion">Conclusion</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </div>
 
 <br>
@@ -18,14 +19,16 @@
 - [React.js](https://reactjs.org)
 - [React Native](https://reactnative.dev)
 - [Expo](https://expo.io/)
-- [Express](https://expressjs.com)
-- [Knex.js](http://knexjs.org)
-- [Axios](https://www.npmjs.com/package/axios)
-- [JWT](https://jwt.io)
-- [Formik](https://jaredpalmer.com/formik/docs/overview)
-- [Yup](https://github.com/jquense/yup)
-- [Eslint](https://www.npmjs.com/package/eslint)
-- [Jest](https://www.npmjs.com/package/jest)
+
+- Main Libraries
+  - [Express](https://expressjs.com)
+  - [Knex.js](http://knexjs.org)
+  - [Axios](https://www.npmjs.com/package/axios)
+  - [JWT](https://jwt.io)
+  - [Formik](https://jaredpalmer.com/formik/docs/overview)
+  - [Yup](https://github.com/jquense/yup)
+  - [Eslint](https://www.npmjs.com/package/eslint)
+  - [Jest](https://www.npmjs.com/package/jest)
 
 <br>
 
@@ -58,5 +61,11 @@ After complete the OmniStack week, I was forward and improved the project a litt
 That was a awesome week full of knowledge where i could improved my knowledge in JavaScript, Node.js e React.js.
 That week i could developed my first mobile app using React Native and I'm very happy for that.
 I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
+
+<br>
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 <br>
