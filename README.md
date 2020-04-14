@@ -3,6 +3,8 @@
 </div>
 <br>
 
+## 
+
 <p align="center">
   <a href="#used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projet">Projet</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -14,7 +16,7 @@
 
 <br>
 
-### :rocket: Used Technologies 
+## :rocket: Used Technologies 
 - [Node.js](https://nodejs.org)
 - [React.js](https://reactjs.org)
 - [React Native](https://reactnative.dev)
