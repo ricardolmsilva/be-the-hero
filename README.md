@@ -49,7 +49,7 @@
 
 After complete the OmniStack week, I was forward and improved the project a little bit :muscle:
 
- - Transformed web project responsible
+ - Transformed web project responsive
  - Implemented JWT authentication
  - Implemented Formik with Yup library to validate forms
  - Fixed bugs in the list of the mobile app when a new incident is created while the user is scrolling
