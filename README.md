@@ -1,19 +1,20 @@
-<h1 align="center">
+<div align="center">
   <img src="./web/src/assets/logo.svg" width="250px" /><br>
-</h1>
+</div>
 <br>
 
+## 
 
-
-<h3 align="center">
+<div align="center">
   <a href="#used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projet">Projet</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-teacher">Teacher</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-improvements">Improvements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-conclusion">Conclusion</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
-</h3>
+</div>
 
+## 
 
 </br>
 </br>
