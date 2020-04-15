@@ -18,6 +18,8 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
-    "jsx-a11y/control-has-associated-label": "off"
+    "jsx-a11y/control-has-associated-label": "off",
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": "off",
   }
 };

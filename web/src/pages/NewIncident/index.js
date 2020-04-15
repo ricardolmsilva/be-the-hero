@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import * as Yup from "yup";
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import * as Yup from 'yup';
 
-import "./styles.css";
+import './styles.css';
 
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { FiArrowLeft } from "react-icons/fi";
-import api from "../../services/api";
-import logo from "../../assets/logo.svg";
+import {
+  ErrorMessage, Field, Form, Formik,
+} from 'formik';
+import { FiArrowLeft } from 'react-icons/fi';
+import api from '../../services/api';
+import logo from '../../assets/logo.svg';
 
 const NewIncident = () => {
-  const [formError, setFormError] = useState("");
-  const ongId = localStorage.getItem("token");
+  const [formError, setFormError] = useState('');
+  const ongId = localStorage.getItem('token');
   const history = useHistory();
 
   return (
@@ -29,19 +31,19 @@ const NewIncident = () => {
         </section>
 
         <Formik
-          initialValues={{ title: "", description: "", value: "" }}
+          initialValues={{ title: '', description: '', value: '' }}
           validationSchema={Yup.object({
-            title: Yup.string().required("Required"),
-            description: Yup.string().required("Required"),
-            value: Yup.number("Value must be a number").required("Required"),
+            title: Yup.string().required('Required'),
+            description: Yup.string().required('Required'),
+            value: Yup.number('Value must be a number').required('Required'),
           })}
           onSubmit={async (values, { setSubmitting }) => {
             try {
-              await api.post("incidents", values, {
+              await api.post('incidents', values, {
                 headers: { Authorization: ongId },
               });
               setSubmitting(false);
-              history.push("/profile");
+              history.push('/profile');
             } catch (err) {
               setSubmitting(false);
               setFormError(err.response.data.error);

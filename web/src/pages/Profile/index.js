@@ -1,22 +1,22 @@
-import "./styles.css";
+import './styles.css';
 
-import { FiPower, FiTrash2 } from "react-icons/fi";
-import { Link, useHistory } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
-import api from "../../services/api";
-import logo from "../../assets/logo.svg";
+import api from '../../services/api';
+import logo from '../../assets/logo.svg';
 
 const Profile = () => {
-  const token = localStorage.getItem("token");
-  const ongName = localStorage.getItem("ongName");
+  const token = localStorage.getItem('token');
+  const ongName = localStorage.getItem('ongName');
   const [incidents, setIncidents] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
     function fetchData() {
       api
-        .get("profile", {
+        .get('profile', {
           headers: {
             Authorization: token,
           },
@@ -29,28 +29,27 @@ const Profile = () => {
   }, [token]);
 
   async function handleDelete(id) {
-    try {
-      await api.delete(`incidents/${id}`, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      setIncidents(incidents.filter((incident) => incident.id !== id));
-    } catch (error) {
-      alert("error");
-    }
+    await api.delete(`incidents/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    setIncidents(incidents.filter((incident) => incident.id !== id));
   }
 
   function handleLogout() {
     localStorage.clear();
-    history.push("/");
+    history.push('/');
   }
 
   return (
     <div className="profile_container fade">
       <header>
         <img src={logo} alt="Logo" />
-        <span>Welcome, {ongName}</span>
+        <span>
+          Welcome,
+          {ongName}
+        </span>
         <Link className="button" to="/incidents/new">
           New incident
         </Link>
@@ -77,9 +76,9 @@ const Profile = () => {
 
             <strong>Value:</strong>
             <p>
-              {Intl.NumberFormat("en-en", {
-                style: "currency",
-                currency: "GBP",
+              {Intl.NumberFormat('en-en', {
+                style: 'currency',
+                currency: 'GBP',
               }).format(incident.value)}
             </p>
 
