@@ -11,7 +11,7 @@ module.exports = {
       'city',
     );
 
-    return res.sendStatus(200).json(ongs);
+    return res.json(ongs);
   },
 
   async create(req, res) {
@@ -37,6 +37,6 @@ module.exports = {
 
     const token = await generateToken(id);
 
-    return res.status(200).json({ name, token });
+    return res.json({ name, token });
   },
 };

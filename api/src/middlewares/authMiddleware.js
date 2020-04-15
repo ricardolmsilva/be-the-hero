@@ -7,11 +7,7 @@ module.exports = (req, res, next) => {
     return res.status(401).json({ error: 'Token not provided' });
   }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.id = decoded.id;
-    return next();
-  } catch (err) {
-    return res.status(401).json({ error: 'Token invalid' });
-  }
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  req.id = decoded.id;
+  return next();
 };

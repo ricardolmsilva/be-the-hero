@@ -15,15 +15,13 @@ const Profile = () => {
 
   useEffect(() => {
     function fetchData() {
-      api
-        .get('profile', {
-          headers: {
-            Authorization: token,
-          },
-        })
-        .then((response) => {
-          setIncidents(response.data);
-        });
+      api.get('profile', {
+        headers: {
+          Authorization: token,
+        },
+      }).then((response) => {
+        setIncidents(response.data);
+      });
     }
     fetchData();
   }, [token]);
@@ -66,7 +64,7 @@ const Profile = () => {
       </div>
 
       <ul>
-        {incidents.map((incident) => (
+        {incidents.map(incident => (
           <li key={incident.id}>
             <strong>Incident:</strong>
             <p>{incident.title}</p>
