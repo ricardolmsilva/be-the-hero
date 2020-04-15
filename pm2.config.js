@@ -19,5 +19,11 @@ module.exports = {
         PORT: 8080,
       }
     },
+    {
+      name: 'hero-mobile',
+      cwd: "./mobile",
+      script: "npm",
+      args: "start"
+    },
   ],
 };

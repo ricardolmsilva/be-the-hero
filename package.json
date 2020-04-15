@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "prepare": "(cd api && yarn); (cd web && yarn); (cd web && yarn build);"
+    "prepare": "(cd api && yarn); (cd web && yarn); (cd web && yarn build); (cd mobile && yarn);"
   }
 }
