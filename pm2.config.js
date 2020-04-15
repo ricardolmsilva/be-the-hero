@@ -22,7 +22,7 @@ module.exports = {
     {
       name: 'hero-mobile',
       cwd: "./mobile",
-      script: "npm",
+      script: "expo",
       args: "start"
     },
   ],
