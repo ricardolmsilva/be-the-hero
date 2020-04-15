@@ -1,8 +1,8 @@
-const app = require("../../src/app");
-const request = require("supertest");
-const connection = require("../../src/database/connection");
+const request = require('supertest');
+const app = require('../../src/app');
+const connection = require('../../src/database/connection');
 
-describe("ONG", () => {
+describe('ONG', () => {
   beforeEach(async () => {
     await connection.migrate.roolback();
     await connection.migrate.latest();
@@ -12,18 +12,18 @@ describe("ONG", () => {
     await connection.destroy();
   });
 
-  it("Should be able to create a new ONG", async () => {
+  it('Should be able to create a new ONG', async () => {
     const response = await request(app)
-      .post("/ongs")
+      .post('/ongs')
       .send({
-        name: "APAD2",
-        email: "contact@contact.com",
-        phone: "4700000000",
-        city: "rio de janeiro",
-        district: "sc"
+        name: 'APAD2',
+        email: 'contact@contact.com',
+        phone: '4700000000',
+        city: 'rio de janeiro',
+        district: 'sc',
       });
 
-    expect(response.body).toHaveProperty("id");
+    expect(response.body).toHaveProperty('id');
     expect(response.body.id).toHaveLength(8);
   });
 });

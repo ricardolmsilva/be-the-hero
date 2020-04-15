@@ -10,9 +10,6 @@ const sessionController = require('./controllers/sessionController');
 
 router.get('/ongs', ongsController.index);
 
-//  @route  POST api/users
-//  @desc   Create ONG & get token
-//  @access  Public
 router.post(
   '/ongs',
   celebrate({

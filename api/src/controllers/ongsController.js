@@ -1,31 +1,33 @@
-const connection = require("../database/connection");
-const generateToken = require("../../utils/generateToken");
-const hashPassword = require("../../utils/hashPassword");
+const connection = require('../database/connection');
+const generateToken = require('../../utils/generateToken');
+const hashPassword = require('../../utils/hashPassword');
 
 module.exports = {
   async index(req, res) {
-    const ongs = await connection("ongs").select(
-      "name",
-      "email",
-      "phone",
-      "city"
+    const ongs = await connection('ongs').select(
+      'name',
+      'email',
+      'phone',
+      'city',
     );
 
     return res.sendStatus(200).json(ongs);
   },
 
   async create(req, res) {
-    const { name, email, password, phone, city } = req.body;
+    const {
+      name, email, password, phone, city,
+    } = req.body;
 
-    const emailExist = await connection("ongs").where("email", email).first();
+    const emailExist = await connection('ongs').where('email', email).first();
 
     if (emailExist !== undefined) {
-      return res.status(401).json({ error: "Email already exist" });
+      return res.status(401).json({ error: 'Email already exist' });
     }
 
     const hashedPassword = await hashPassword(password);
-    console.log(phone);
-    const [id] = await connection("ongs").insert({
+
+    const [id] = await connection('ongs').insert({
       name,
       email,
       password: hashedPassword,
@@ -35,8 +37,6 @@ module.exports = {
 
     const token = await generateToken(id);
 
-    console.log(token, name);
-
-    res.status(200).json({ name, token });
+    return res.status(200).json({ name, token });
   },
 };

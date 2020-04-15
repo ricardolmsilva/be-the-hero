@@ -1,8 +1,7 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
-module.exports = function hashPassword(password) {
-  const saltRounds = 4;
-  const hashedPassword = bcrypt.hashSync(password, saltRounds);
-
+module.exports = async function hashPassword(password) {
+  const saltRounds = Number(process.env.SALT_ROUNDS);
+  const hashedPassword = await bcrypt.hashSync(password, saltRounds);
   return hashedPassword;
 };
