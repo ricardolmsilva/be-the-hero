@@ -1,7 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
+import Constants from 'expo-constants';
 
 const api = axios.create({
-  baseURL: "http://192.168.0.10:5000",
+  baseURL: Constants.manifest.extra.BASE_URL
 });
 
 export default api;

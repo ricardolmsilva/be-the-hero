@@ -6,46 +6,46 @@ import {
   TouchableOpacity,
   View,
   RefreshControl,
-} from "react-native";
-import React, { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { Feather } from "@expo/vector-icons";
+} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
 
-import api from "../../services/api";
-import logoImg from "../../assets/logo.png";
-import styles from "./styles";
+import api from '../../services/api';
+import logoImg from '../../assets/logo.png';
+import styles from './styles';
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [firstIncidentID, setFirstIncidentID] = useState()
+  const [firstIncidentID, setFirstIncidentID] = useState();
   const navigation = useNavigation();
 
   async function fetchData(isRefresh) {
-
-    const response = await api.get("incidents", !isRefresh && {
-      headers: { "id": firstIncidentID },
+    const response = await api.get('incidents', !isRefresh && {
+      headers: { id: firstIncidentID },
       params: { page }
     });
 
     if (isRefresh) {
-      if (incidents[1].id != response.data[1].id) {
-        setIncidents(response.data)
-        setTotal(response.headers["x-total-count"]);
-        setFirstIncidentID(response.data[0].id)
-        setPage(2)
+      if (incidents[1].id !== response.data[1].id) {
+        setIncidents(response.data);
+        setTotal(response.headers['x-total-count']);
+        setFirstIncidentID(response.data[0].id);
+        setPage(2);
       }
     } else {
-      setIncidents([...incidents, ...response.data])
-      page == 1 && setTotal(response.headers["x-total-count"]);
-      page == 1 && setFirstIncidentID(response.data[0].id)
-      setPage(page => page + 1);
+      setIncidents([...incidents, ...response.data]);
+      if (page === 1) {
+        setTotal(response.headers['x-total-count']);
+        setFirstIncidentID(response.data[0].id);
+      }
+      setPage((oldPage) => oldPage + 1);
     }
 
     setLoading(false);
-
   }
 
   async function refreshIncidents() {
@@ -54,7 +54,7 @@ export default function Incidents() {
     }
 
     setLoading(true);
-    fetchData((isRefresh = true));
+    fetchData(true);
   }
 
   async function loadIncidents() {
@@ -67,17 +67,15 @@ export default function Incidents() {
     }
 
     setLoading(true);
-    await fetchData((isRefresh = false));
+    await fetchData(false);
   }
 
   useEffect(() => {
-
-    loadIncidents()
-
+    loadIncidents();
   }, []);
 
   function navigateToDetail(incident) {
-    navigation.navigate("Detail", { incident });
+    navigation.navigate('Detail', { incident });
   }
 
   return (
@@ -85,7 +83,13 @@ export default function Incidents() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total of <Text styles={styles.headerTextBold}>{total} incidents</Text>
+          Total of
+          {' '}
+          <Text styles={styles.headerTextBold}>
+            {total}
+            {' '}
+            incidents
+          </Text>
         </Text>
       </View>
 
@@ -121,9 +125,9 @@ export default function Incidents() {
 
             <Text style={styles.incidentProperty}>Value:</Text>
             <Text style={styles.incidentValue}>
-              {Intl.NumberFormat("en", {
-                style: "currency",
-                currency: "GBP",
+              {Intl.NumberFormat('en', {
+                style: 'currency',
+                currency: 'GBP',
               }).format(incident.value)}
             </Text>
 
@@ -132,7 +136,7 @@ export default function Incidents() {
               onPress={() => navigateToDetail(incident)}
             >
               <Text style={styles.detailsButtonText}>More Details</Text>
-              <Feather name="arrow-right" size={16} color="#e02041"></Feather>
+              <Feather name="arrow-right" size={16} color="#e02041" />
             </TouchableOpacity>
           </View>
         )}
