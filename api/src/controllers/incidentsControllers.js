@@ -39,13 +39,13 @@ module.exports = {
       title,
       description,
       value,
-      ongId,
+      ong_id: ongId,
     });
-    res.json({ id });
+    return res.status(200).json({ id });
   },
 
   async delete(req, res) {
-    const ongId = req.id;
+    const ongId = String(req.id);
     const { id } = req.params;
 
     const incident = await connection('incidents')
@@ -56,6 +56,7 @@ module.exports = {
     if (!incident) {
       return res.status(404).json({ error: 'Incident not found' });
     }
+
     if (incident.ong_id !== ongId) {
       return res.status(401).json({ error: 'Operation not allowed' });
     }
