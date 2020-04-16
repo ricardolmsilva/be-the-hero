@@ -50,13 +50,13 @@
 
 </br>
 You can try mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed "Expo Client" app in your smartphone. 
- <img src="./mobile/assets/qrcode.png" width="250px" />
- </br>
+</br>
+  <img src="./mobile/assets/qr.jpeg" width="250px" />
 </br>
 
-To try web application just click in the link bellow.
 
-<a href="http://hero.ricardolmsilva.site" target="_blank">Web Demo</a>
+To try web application just click in the link bellow.
+[Go to demo](http://hero.ricardolmsilva.site)
 </br>
 </br>
 
