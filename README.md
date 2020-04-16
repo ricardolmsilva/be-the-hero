@@ -49,7 +49,7 @@
 <b>Be the Hero</b> it's a project that aims to help financial charity associations.
 
 </br>
-You can try mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed "Expo Client" app in your smartphone. 
+You can try the mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed the "Expo Client" app in your smartphone. 
 </br>
 </br>
   <img src="./mobile/assets/qr.jpeg" width="250px" />
