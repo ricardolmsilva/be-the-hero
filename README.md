@@ -1,10 +1,10 @@
 <div align="center">
   <img src="./web/src/assets/logo.svg" width="250px" /><br>
 </div>
-<br>
+</br>
 
 ## 
-<br>
+</br>
 <div align="center">
   <a href="#rocket-used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -42,13 +42,21 @@
 - [Jest](https://www.npmjs.com/package/jest)
 
 
-<br>
+</br>
 
 ## :computer: Project
 
 <b>Be the Hero</b> it's a project that aims to help financial charity associations.
 
-<br>
+</br>
+You can try mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed "Expo Client" app in your smartphone. 
+ <img src="./web/src/assets/logo.svg" width="250px" /><br>
+
+</br>
+
+To try web application just click in the link bellow.
+<a href="http://hero.ricardolmsilva.site" target="_blank">
+</br>
 
 ## :nerd_face: Improvements
 
@@ -60,13 +68,13 @@ After complete the OmniStack week, I was forward and improved the project a litt
  - Fixed bugs in the list of the mobile app when a new incident is created while the user is scrolling
  - Improved list in mobile app creating a new method to get the most recent incidents with gesture down
 
-<br>
+</br>
 
 ## :mortar_board: Teacher
 
 OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat)
 
-<br>
+</br>
 
 ## :books: Conclusion
 
@@ -74,10 +82,10 @@ That was a awesome week full of knowledge where i could improved my knowledge in
 That week i could developed my first mobile app using React Native and I'm very happy for that.
 I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
 
-<br>
+</br>
 
 ## :memo: License
 
 This project is under the MIT license.
 
-<br>
+</br>
