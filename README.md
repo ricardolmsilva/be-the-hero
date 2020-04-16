@@ -68,7 +68,6 @@ After complete the OmniStack week, I was forward and improved the project a litt
  - Transformed web project responsive
  - Implemented JWT authentication
  - Implemented Formik with Yup library to validate forms
- - Fixed bugs in the list of the mobile app when a new incident is created while the user is scrolling
  - Improved list in mobile app creating a new method to get the most recent incidents with gesture down
 
 </br>
@@ -81,8 +80,8 @@ OmniStack week 11.0 was guided by the [RocketSeat](https://github.com/Rocketseat
 
 ## :books: Conclusion
 
-That was a awesome week full of knowledge where i could improved my knowledge in JavaScript, Node.js e React.js.
-That week i could developed my first mobile app using React Native and I'm very happy for that.
+That was an awesome week full of knowledge where I could improved my knowledge in JavaScript, Node.js e React.js.
+That week I could developed my first mobile app using React Native and I'm very happy for that.
 I'm already waiting for next Omnistack week! :hourglass_flowing_sand:
 
 </br>
