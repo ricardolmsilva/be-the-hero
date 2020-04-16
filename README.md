@@ -4,7 +4,7 @@
 </br>
 
 ## 
-</br>
+</div>
 <div align="center">
   <a href="#rocket-used-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -16,7 +16,7 @@
 
 ## 
 
-</br>
+</div>
 
 <div align="center">
   <img src="./web/src/assets/mockup.png" height="350px" /><br>
@@ -30,7 +30,7 @@
 - [React Native](https://reactnative.dev)
 - [Expo](https://expo.io/)
 
-</br>
+</div>
 
 - [Express](https://expressjs.com)
 - [Knex.js](http://knexjs.org)
@@ -51,11 +51,12 @@
 </br>
 You can try mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed "Expo Client" app in your smartphone. 
 </br>
+</br>
   <img src="./mobile/assets/qr.jpeg" width="250px" />
 </br>
 
 
-To try web application just click in the link bellow.
+To try web application just click in the link bellow.</br>
 [Go to demo](http://hero.ricardolmsilva.site)
 </br>
 </br>
