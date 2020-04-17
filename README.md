@@ -52,7 +52,7 @@
 You can try the mobile app, just scanning that QRCode with the cam of your smartphone. Is required to have installed the "Expo Client" app in your smartphone. 
 </br>
 </br>
-  <img src="./mobile/assets/qr.jpeg" width="250px" />
+  <img src="./mobile/assets/qr.jpg" width="250px" />
 </br>
 
 

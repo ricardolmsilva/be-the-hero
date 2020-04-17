@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Be the hero",
-    "slug": "mobile",
+    "slug": "be-the-hero",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -27,7 +27,9 @@
       "supportsTablet": true
     },
     "extra": {
-      "BASE_URL": "http://192.168.0.10:5000"
-    }
+      "BASE_URL": "https://heroapi.ricardolmsilva.site"
+    },
+    "description": "Be the Hero it's a project that aims to help financial charity associations.",
+    "githubUrl": "https://github.com/ricardolmsilva/be-the-hero"
   }
 }
