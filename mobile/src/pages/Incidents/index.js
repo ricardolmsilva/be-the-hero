@@ -17,7 +17,7 @@ import styles from './styles';
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState('');
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [firstIncidentID, setFirstIncidentID] = useState();
@@ -30,7 +30,7 @@ export default function Incidents() {
     });
 
     if (isRefresh) {
-      if (incidents[1].id !== response.data[1].id) {
+      if (incidents[0].id !== response.data[0].id || response.headers['x-total-count'] !== total) {
         setIncidents(response.data);
         setTotal(response.headers['x-total-count']);
         setFirstIncidentID(response.data[0].id);
@@ -104,7 +104,7 @@ export default function Incidents() {
         keyExtractor={(incident) => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
-        ListFooterComponent={total !== 0 && loading && <ActivityIndicator style={styles.loading} />}
+        ListFooterComponent={total && loading && <ActivityIndicator style={styles.loading} />}
         onEndReachedThreshold={0.3}
         refreshControl={
           <RefreshControl refreshing={loading} onRefresh={refreshIncidents} />
