@@ -23,7 +23,7 @@ module.exports = {
       name: 'hero-mobile',
       cwd: "./mobile",
       script: "expo",
-      args: "start"
+      args: "start --no-dev --minify"
     },
   ],
 };
