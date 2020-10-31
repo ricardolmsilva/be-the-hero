@@ -4,7 +4,7 @@ module.exports = {
       name: 'hero-server',
       script: './api/src/server.js',
       env: {
-        PORT: 5000,
+        PORT: 8004,
         SALT_ROUNDS: 4,
         JWT_SECRET: 'secret',
         NODE_ENV: 'production',
@@ -14,16 +14,22 @@ module.exports = {
       name: 'hero-client',
       script: "./web/server.js",
       env: {
+        PM2_SERVE_PATH: 'build',
+        PM2_SERVE_PORT: 8003,
+        PM2_SERVE_SPA: 'true',
+        PM2_SERVE_HOMEPAGE: '/index.html',
         //PM2_SERVE_PATH: './web/build',
         //PM2_SERVE_PORT: 8080,
-        PORT: 8080,
       }
     },
     {
       name: 'hero-mobile',
       cwd: "./mobile",
       script: "expo",
-      args: "start --no-dev --minify"
+      args: "start --no-dev --minify",
+      env: {
+        PORT: 8005,
+      }
     },
   ],
 };
