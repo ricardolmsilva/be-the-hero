@@ -12,24 +12,19 @@ module.exports = {
     },
     {
       name: 'hero-client',
-      script: "./web/server.js",
+      script: 'serve',
       env: {
-        PM2_SERVE_PATH: 'build',
+        PM2_SERVE_PATH: './web/build',
         PM2_SERVE_PORT: 8003,
         PM2_SERVE_SPA: 'true',
         PM2_SERVE_HOMEPAGE: '/index.html',
-        //PM2_SERVE_PATH: './web/build',
-        //PM2_SERVE_PORT: 8080,
-      }
+      },
     },
     {
       name: 'hero-mobile',
       cwd: "./mobile",
       script: "expo",
       args: "start --no-dev --minify",
-      env: {
-        PORT: 8005,
-      }
     },
   ],
 };
