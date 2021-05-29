@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "prepare": "(cd api && yarn && yarn knex migrate:latest); (cd web && yarn); (cd web && yarn build);"
+    "prepare": "(cd api && yarn && yarn knex migrate:latest); (cd web && yarn); (cd web && yarn build); (pm2 start pm2.config.js)"
   }
 }
