@@ -16,12 +16,16 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ricardolmsilva.herothehero"
     },
     "description": "Be the Hero it's a project that aims to help financial charity associations.",
     "githubUrl": "https://github.com/ricardolmsilva/be-the-hero",
     "extra": {
       "BASE_URL": "https://heroapi.ricardosilva.dev"
+    },
+    "android": {
+      "package": "com.ricardolmsilva.herothehero"
     }
   }
 }
