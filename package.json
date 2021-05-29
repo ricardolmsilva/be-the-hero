@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "prepare": "(cd api && yarn && yarn knex migrate:latest); (cd web && yarn); (cd web && yarn build); (cd mobile && yarn);"
+    "prepare": "(cd api && yarn && yarn knex migrate:latest); (cd web && yarn); (cd web && yarn build);"
   }
 }
