@@ -6,40 +6,46 @@ import {
   TouchableOpacity,
   View,
   RefreshControl,
-} from 'react-native';
-import React, { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Feather } from '@expo/vector-icons';
+} from "react-native";
+import React, { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Feather } from "@expo/vector-icons";
 
-import api from '../../services/api';
-import logoImg from '../../assets/logo.png';
-import styles from './styles';
+import api from "../../services/api";
+import logoImg from "../../assets/logo.png";
+import styles from "./styles";
 
 export default function Incidents() {
   const [incidents, setIncidents] = useState([]);
-  const [total, setTotal] = useState('');
+  const [total, setTotal] = useState("");
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [firstIncidentID, setFirstIncidentID] = useState();
   const navigation = useNavigation();
 
   async function fetchData(isRefresh) {
-    const response = await api.get('incidents', !isRefresh && {
-      headers: { id: firstIncidentID },
-      params: { page }
-    });
+    const response = await api.get(
+      "incidents",
+      !isRefresh && {
+        headers: { id: firstIncidentID },
+        params: { page },
+      }
+    );
 
     if (isRefresh) {
-      if (incidents[0].id !== response.data[0].id || response.headers['x-total-count'] !== total) {
+      if (
+        incidents[0].id !== response.data[0].id ||
+        response.headers["x-total-count"] !== total
+      ) {
         setIncidents(response.data);
-        setTotal(response.headers['x-total-count']);
+        setTotal(response.headers["x-total-count"]);
         setFirstIncidentID(response.data[0].id);
         setPage(2);
       }
     } else {
       setIncidents([...incidents, ...response.data]);
       if (page === 1) {
-        setTotal(response.headers['x-total-count']);
+        setTotal(response.headers["x-total-count"]);
         setFirstIncidentID(response.data[0].id);
       }
       setPage((oldPage) => oldPage + 1);
@@ -75,7 +81,7 @@ export default function Incidents() {
   }, []);
 
   function navigateToDetail(incident) {
-    navigation.navigate('Detail', { incident });
+    navigation.navigate("Detail", { incident });
   }
 
   return (
@@ -83,13 +89,7 @@ export default function Incidents() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total of
-          {' '}
-          <Text styles={styles.headerTextBold}>
-            {total}
-            {' '}
-            incidents
-          </Text>
+          Total of <Text styles={styles.headerTextBold}>{total} incidents</Text>
         </Text>
       </View>
 
@@ -104,7 +104,9 @@ export default function Incidents() {
         keyExtractor={(incident) => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
-        ListFooterComponent={total && loading && <ActivityIndicator style={styles.loading} />}
+        ListFooterComponent={
+          total && loading && <ActivityIndicator style={styles.loading} />
+        }
         onEndReachedThreshold={0.3}
         refreshControl={
           <RefreshControl refreshing={loading} onRefresh={refreshIncidents} />
@@ -125,9 +127,9 @@ export default function Incidents() {
 
             <Text style={styles.incidentProperty}>Value:</Text>
             <Text style={styles.incidentValue}>
-              {Intl.NumberFormat('en', {
-                style: 'currency',
-                currency: 'GBP',
+              {Intl.NumberFormat("en", {
+                style: "currency",
+                currency: "GBP",
               }).format(incident.value)}
             </Text>
 

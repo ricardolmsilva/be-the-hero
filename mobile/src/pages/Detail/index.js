@@ -1,4 +1,4 @@
-import * as MailComposer from "expo-mail-composer";
+import * as MailComposer from 'expo-mail-composer';
 
 import {
   Image,
@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   View,
   ScrollView,
-} from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
+} from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
-import { Feather } from "@expo/vector-icons";
-import React from "react";
-import logoIMG from "../../assets/logo.png";
-import styles from "./styles";
+import { Feather } from '@expo/vector-icons';
+import React from 'react';
+import logoIMG from '../../assets/logo.png';
+import styles from './styles';
 
 const Detail = () => {
   const route = useRoute();
@@ -27,12 +27,12 @@ const Detail = () => {
     incident.title
   }"
   with the value of
-  ${Intl.NumberFormat("en", { style: "currency", currency: "GBP" }).format(
+  ${Intl.NumberFormat('en', { style: 'currency', currency: 'GBP' }).format(
     incident.value
   )}.`;
 
   function navigateBack() {
-    navigation.navigate("Incidents");
+    navigation.navigate('Incidents');
   }
 
   function sendMail() {
@@ -71,9 +71,9 @@ const Detail = () => {
 
           <Text style={styles.incidentProperty}>Value:</Text>
           <Text style={[styles.incidentValue, { marginBottom: 0 }]}>
-            {Intl.NumberFormat("en", {
-              style: "currency",
-              currency: "GBP",
+            {Intl.NumberFormat('en', {
+              style: 'currency',
+              currency: 'GBP',
             }).format(incident.value)}
           </Text>
         </View>
