@@ -1,14 +1,19 @@
-import * as MailComposer from 'expo-mail-composer';
+import * as MailComposer from "expo-mail-composer";
 
 import {
-  Image, Linking, Text, TouchableOpacity, View, ScrollView
-} from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+  Image,
+  Linking,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+} from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { Feather } from '@expo/vector-icons';
-import React from 'react';
-import logoIMG from '../../assets/logo.png';
-import styles from './styles';
+import { Feather } from "@expo/vector-icons";
+import React from "react";
+import logoIMG from "../../assets/logo.png";
+import styles from "./styles";
 
 const Detail = () => {
   const route = useRoute();
@@ -18,12 +23,16 @@ const Detail = () => {
 
   // Message
   const message = `Hello ${incident.name},
-  I'm getting in touch because would like to help with the incident "${incident.title}"
+  I'm getting in touch because would like to help with the incident "${
+    incident.title
+  }"
   with the value of
-  ${Intl.NumberFormat('en', { style: 'currency', currency: 'GBP', }).format(incident.value)}.`;
+  ${Intl.NumberFormat("en", { style: "currency", currency: "GBP" }).format(
+    incident.value
+  )}.`;
 
   function navigateBack() {
-    navigation.navigate('Incidents');
+    navigation.navigate("Incidents");
   }
 
   function sendMail() {
@@ -41,11 +50,10 @@ const Detail = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={logoIMG} />
-
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#e82041" />
         </TouchableOpacity>
+        <Image source={logoIMG} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.incident}>
@@ -63,9 +71,9 @@ const Detail = () => {
 
           <Text style={styles.incidentProperty}>Value:</Text>
           <Text style={[styles.incidentValue, { marginBottom: 0 }]}>
-            {Intl.NumberFormat('en', {
-              style: 'currency',
-              currency: 'GBP',
+            {Intl.NumberFormat("en", {
+              style: "currency",
+              currency: "GBP",
             }).format(incident.value)}
           </Text>
         </View>
