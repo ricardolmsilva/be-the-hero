@@ -2,11 +2,7 @@
   "expo": {
     "name": "Be the hero",
     "slug": "hero-the-hero",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,16 +14,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "description": "Be the Hero it's a project that aims to help financial charity associations.",
     "githubUrl": "https://github.com/ricardolmsilva/be-the-hero",
     "extra": {
-      "BASE_URL": "https://heroapi.ricardolmsilva.site"
+      "BASE_URL": "https://heroapi.ricardosilva.dev"
     }
   }
 }
